@@ -4,10 +4,10 @@ Crea una función que invierta
 una cadena de texto.
 """
 
-def reverse_string(text):
-    reversed_string = ""
-    for char in text:
-        reversed_string= char + reversed_string
-    return reversed_string
+def invertir_cadena(cadena):
+    return cadena[::-1]
 
-print(reverse_string("Hola, mundo!"))
+# Ejemplo de uso
+texto = input("Ingresa una cadena de texto: ")
+texto_invertido = invertir_cadena(texto)
+print(f"Texto invertido: {texto_invertido}")
