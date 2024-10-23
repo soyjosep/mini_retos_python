@@ -5,9 +5,22 @@ una cadena de texto.
 """
 
 def invertir_cadena(cadena):
+    """
+    Invierte una cadena de texto.
+
+    Parámetros:
+    cadena (str): La cadena de texto a invertir.
+
+    Retorna:
+    str: La cadena invertida.
+    """
     return cadena[::-1]
 
-# Ejemplo de uso
-texto = input("Ingresa una cadena de texto: ")
-texto_invertido = invertir_cadena(texto)
-print(f"Texto invertido: {texto_invertido}")
+def main():
+    print("Inversión de Cadenas de Texto")
+    cadena = input("Ingrese una cadena de texto: ")
+    cadena_invertida = invertir_cadena(cadena)
+    print(f"La cadena invertida es: {cadena_invertida}")
+
+if __name__ == "__main__":
+    main()
