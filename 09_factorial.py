@@ -4,17 +4,17 @@ Crea una función que calcule
 el factorial de un número.
 """
 
-def factorial(n: int) -> int:
+def factorial(n):
     if n < 0:
-        raise ValueError("El número debe ser un entero no negativo.")
-    
-    if n == 0 or n == 1:
+        return "El factorial no está definido para números negativos."
+    elif n == 0 or n == 1:
         return 1
-    
-    result = 1
-    for i in range(2, n + 1):
-        result = result * i
+    else:
+        resultado = 1
+        for i in range(2, n + 1):
+            resultado *= i
+        return resultado
 
-    return result
-
-print(factorial(5))
+# Ejemplo de uso
+numero = int(input("Ingresa un número entero: "))
+print(f"El factorial de {numero} es {factorial(numero)}")
