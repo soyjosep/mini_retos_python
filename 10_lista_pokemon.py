@@ -5,12 +5,16 @@ utilizando la PokéAPI.
 """
 
 import requests
+def listar_pokemons(limite=151):
+    url = f"https://pokeapi.co/api/v2/pokemon?limit={limite}"
+    respuesta = requests.get(url)
 
-url = "https://pokeapi.co/api/v2/pokemon?limit=151"
+    if respuesta.status_code == 200:
+        datos = respuesta.json()
+        for index, pokemon in enumerate(datos["results"], start=1):
+            print(f"{index}. {pokemon['name'].capitalize()}")
+    else:
+        print("No se pudo obtener la lista de pokémon.")
 
-response = requests.get(url)
-
-list = response.json()["results"]
-
-for pokemon in list:
-    print(pokemon["name"])
+# Ejemplo de uso
+listar_pokemons()
