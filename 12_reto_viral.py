@@ -8,14 +8,19 @@ blanco en su lugar, de manera
 ascendente y descendente.
 """
 
-for i in range(1, 9):
-    print(" " * (i -1), end="")
-    for j in range(i, 9):
-        print(j, end="")
-    print()
+def reto_viral():
+    numero = "12345678"
+    
+    # Ascendente
+    for i in range(len(numero)):
+        print(" " * i + numero[i:])
+    
+    # Punto de unión entre ascendente y descendente
+    print(" " * len(numero[:-1]) + numero[-1])  # Último número de la parte ascendente sin salto de línea extra
 
-for i in range(8, 0, -1):
-    print(" " * (i - 1), end="")
-    for j in range(i, 9):
-        print(j, end="")
-    print()
+    # Descendente
+    for i in range(len(numero) - 2, -1, -1):
+        print(" " * i + numero[i:])
+
+# Ejecutar la función
+reto_viral()
